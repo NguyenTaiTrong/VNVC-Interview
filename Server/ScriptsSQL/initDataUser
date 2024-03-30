@@ -1,0 +1,5 @@
+INSERT INTO Users(UserName, Phone, BirthDay, CreatedAt, CreatedBy)
+VALUES
+    ('John Doe', '1234567890', GETDATE(),GETDATE(), null),
+    ('Alice Smith', '9876543210', GETDATE(),GETDATE(), null),
+    ('Bob Johnson', '5551234567', GETDATE(),GETDATE(), null);

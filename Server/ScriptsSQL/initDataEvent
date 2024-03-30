@@ -1,0 +1,5 @@
+INSERT INTO Events (Name, StartTime, EndTime, CreatedAt)
+VALUES 
+  ('Event 1', '2024-04-01 10:00:00', '2024-04-01 12:00:00', GETDATE()),
+  ('Event 2', '2024-04-02 13:00:00', '2024-04-02 15:00:00', GETDATE()),
+  ('Event 3', '2024-04-03 09:30:00', '2024-04-03 11:30:00', GETDATE());

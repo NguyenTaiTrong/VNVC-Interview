@@ -1,0 +1,23 @@
+CREATE PROCEDURE GetEventsWithBetsAndUsers
+AS
+BEGIN
+    SELECT e.Id AS EventId,
+           e.Name AS EventName,
+           e.StartTime AS EventStartTime,
+           e.EndTime AS EventEndTime,
+           b.Id AS BetId,
+           b.UserId AS UserId,
+           b.BetNumber AS BetNumber,
+           b.CreatedAt AS BetCreatedAt,
+           u.Id AS UserId,
+           u.CreatedAt AS UserCreatedAt,
+           u.CreatedBy AS UserCreatedBy,
+           u.UserName AS UserName,
+           u.Phone AS UserPhone,
+           u.BirthDay AS UserBirthDay,
+           br.Result AS Result
+    FROM Events e
+    INNER JOIN Bets b ON e.Id = b.EventId
+    INNER JOIN Users u ON b.UserId = u.Id
+    INNER JOIN BetResults br ON b.BetResultId = br.Id;
+END

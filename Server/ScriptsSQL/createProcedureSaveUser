@@ -1,0 +1,13 @@
+CREATE PROCEDURE SaveUser
+    @UserName NVARCHAR(100),
+    @Phone NVARCHAR(20),
+    @BirthDay DATETIME,
+    @CreatedAt DATETIME,
+    @CreatedBy INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Users (UserName, Phone, BirthDay, CreatedAt, CreatedBy)
+    VALUES (@UserName, @Phone, @BirthDay, @CreatedAt, @CreatedBy);
+END

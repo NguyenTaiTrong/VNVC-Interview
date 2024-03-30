@@ -1,0 +1,15 @@
+CREATE PROCEDURE SaveBet
+    @user_id INT,
+    @event_id INT,
+    @bet_number INT,
+    @createdAt DATETIME,
+    @createdBy INT,
+    @betResultId INT
+    
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Bets (UserId, EventId, BetNumber, CreatedAt, CreatedBy, BetResultId)
+    VALUES (@user_id, @event_id, @bet_number, @createdAt, @createdBy, @betResultId);
+END
